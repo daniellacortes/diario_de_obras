@@ -39,21 +39,22 @@
                                         <label for="owner" class="form-label fs-4">Proprierário(a)</label>
                                     </div>
                                     <div class="col me-4">
-                                        <textarea class="form-control" id="owner" rows="1"></textarea>
+                                        <input type="text" class="form-control" id="owner" rows="1"></input type="text">
                                     </div>
                                 </div>
                                 <div class="row mt-4 ms-4">
                                     <div class="col-2">
-                                        <label for="zipcode" class="form-label fs-4">CEP</label>
+                                        <label for="zipCode" class="form-label fs-4">CEP</label>
                                     </div>
                                     <div class="col-3 me-4">
-                                        <textarea class="form-control" id="zipcode" rows="1"></textarea>
+                                        <input type="text" class="form-control" id="zipCode" rows="1">
+                                        <p id="zipCodeMessage"></p>
                                     </div>
                                     <div class="col-1">
                                         <label for="city" class="form-label fs-4">Cidade</label>
                                     </div>
                                     <div class="col me-4">
-                                        <textarea class="form-control" id="city" rows="1"></textarea>
+                                        <input type="text" class="form-control" id="city" rows="1"></input type="text">
                                     </div>
                                 </div>
                                 <div class="row mt-4 ms-4">
@@ -61,33 +62,33 @@
                                         <label for="state" class="form-label fs-4">Estado</label>
                                     </div>
                                     <div class="col-4">
-                                        <textarea class="form-control" id="state" rows="1"></textarea>
+                                        <input type="text" class="form-control" id="state" rows="1"></input type="text">
                                     </div>
                                     <div class="col-1">
                                         <label for="nbhd" class="form-label fs-4">Bairro</label>
                                     </div>
                                     <div class="col me-4">
-                                        <textarea class="form-control" id="nbhd" rows="1"></textarea>
+                                        <input type="text" class="form-control" id="nbhd" rows="1"></input type="text">
                                     </div>
                                 </div>
                                 <div class="row mt-4 ms-4">
                                     <div class="col-2">
-                                        <label for="street" class="form-label fs-4">Logradouro</label>
+                                        <label for="address" class="form-label fs-4">Logradouro</label>
                                     </div>
                                     <div class="col">
-                                        <textarea class="form-control" id="street" rows="1"></textarea>
+                                        <input type="text" class="form-control" id="address" rows="1" required></input type="text">
                                     </div>
                                     <div class="col-1 text-end pe-4">
                                         <label for="num" class="form-label fs-4">Nº</label>
                                     </div>
                                     <div class="col-1 ps-0">
-                                        <textarea class="form-control" id="num" rows="1"></textarea>
+                                        <input type="text" class="form-control" id="num" rows="1"></input type="text">
                                     </div>
                                     <div class="col-2">
                                         <label for="complement" class="form-label fs-4">Complemento</label>
                                     </div>
                                     <div class="col-2 ps-0 me-4">
-                                        <textarea class="form-control" id="complement" rows="1"></textarea>
+                                        <input type="text" class="form-control" id="complement" rows="1"></input type="text">
                                     </div>
                                 </div>
                                 <div class="row mt-4 ms-4">
@@ -95,7 +96,7 @@
                                         <label for="eng" class="form-label fs-4">Engenheiro Responsável</label>
                                     </div>
                                     <div class="col me-4">
-                                        <textarea class="form-control" id="eng" rows="1"></textarea>
+                                        <input type="text" class="form-control" id="eng" rows="1"></input type="text">
                                     </div>
                                 </div>
                                 <div class="row mt-4 ms-4">
@@ -103,13 +104,13 @@
                                         <label for="crea" class="form-label fs-4">CREA</label>
                                     </div>
                                     <div class="col-4">
-                                        <textarea class="form-control" id="crea" rows="1"></textarea>
+                                        <input type="text" class="form-control" id="crea" rows="1"></input type="text">
                                     </div>
                                     <div class="col-1">
-                                        <label for="ART" class="form-label fs-4">ART</label>
+                                        <label for="art" class="form-label fs-4">ART</label>
                                     </div>
                                     <div class="col me-4">
-                                        <textarea class="form-control" id="art" rows="1"></textarea>
+                                        <input type="text" class="form-control" id="art" rows="1"></input type="text">
                                     </div>
                                 </div>
                                 <div class="row mt-4 ms-4">
@@ -132,8 +133,7 @@
                                         <label for="startTime" class="form-label fs-4">Início do expediente</label>
                                     </div>
                                     <div class="col">
-                                        <input type="time" class="form-control currentDate" id="startTime"
-                                            rows="1"></input>
+                                        <input type="time" class="form-control" id="startTime" rows="1"></input>
                                     </div>
                                     <div class="col ms-4">
                                         <label for="endTime" class="form-label fs-4">Fim do Expediente</label>
@@ -154,11 +154,12 @@
                                                 class="bi bi-plus fs-2"></i>Adicionar</button>
                                     </div>
                                 </div>
-                                <div class="row" id="workersDiv"></div>
+                                <div class="row ps-5 me-4 pt-4" id="workersDiv">
+                                </div>
                                 <div class="row">
                                     <div class="col"></div>
                                     <div class="col-2 me-4 text-end">
-                                        <button type="button" class="btn btn-success fs-5 px-4">Salvar</button>
+                                        <button type="submit" class="btn btn-success fs-5 px-4">Salvar</button>
                                     </div>
                                 </div>
                             </form>
@@ -176,7 +177,7 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title text-center w-100">Cadastrar Mão de Obra</h5>
+                    <h5 class="modal-title text-center w-100" id="workerRegisterModalLabel">Cadastrar Mão de Obra</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -223,7 +224,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-outline-success" data-bs-dismiss="modal">Cancelar</button>
-                    <button type="submit" class="btn btn-success" id="saveForm" form="formWorker">Salvar</button>
+                    <button type="submit" class="btn btn-success" id="saveWorkerButton" form="formWorker">Salvar</button>
                 </div>
             </div>
         </div>
