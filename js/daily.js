@@ -47,7 +47,8 @@ inputImage.addEventListener("change", function () {
 
 const workersInstance = bootstrap.Modal.getOrCreateInstance(workersModal);
 
-saveFormBtn.addEventListener("click", () => {
+saveFormBtn.addEventListener("click", (e) => {
+  e.preventDefault();
   const name = document.getElementById("nameWorker").value.trim();
   if (!name) return;
 
@@ -63,7 +64,13 @@ saveFormBtn.addEventListener("click", () => {
 
   workersDiv.appendChild(rowDiv);
 
+  formWorker.reset();
+
   workerRegisterInstance.hide();
+
+  setTimeout(() => {
+  workersInstance.show();
+}, 100);
 
   workersInstance.show();
 });
